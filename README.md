@@ -1,35 +1,30 @@
-# Customer Churn — Data Quality and Exploratory Analysis
+# Business KPI Dashboard — Customer Churn
 
-## Files
-- `churn_analysis.ipynb` — reproducible profiling, cleaning, validation, summary statistics and EDA.
-- `cleaned_customer_churn.csv` — cleaned analysis-ready data.
-- `data_quality_summary.pdf` — concise audit decisions, checks, findings and limitations.
-- `customer_churn_sample.csv` — original supplied dataset (include this file in the repository to make the notebook reproducible).
+## Live dashboard
+After enabling GitHub Pages, open the repository's Pages URL. The entry page is `index.html`.
 
-## Dataset overview
-- Rows: 15
-- Columns: 11
-- Churned customers: 7
-- Observed churn rate: 46.7%
+## What it contains
+- Churn rate and retention rate
+- Monthly revenue at risk (INR)
+- Average customer tenure
+- Interactive filters for contract type, tenure band, and payment method
+- Churn split, churn by contract, payment-method breakdown, and tenure comparison charts
+- Short observations that update with filters
 
-## Run the notebook
-1. Install Python 3 and Jupyter.
-2. Install dependencies: `pip install pandas numpy matplotlib jupyter`
-3. Place `customer_churn_sample.csv` beside `churn_analysis.ipynb`.
-4. Open Jupyter and choose **Run All**.
+## KPI definitions
+- Churn rate = churned customers / all customers in the selected segment × 100
+- Retention rate = retained customers / all customers in the selected segment × 100
+- Monthly revenue at risk = sum of monthly charges for customers marked churned in the selected segment
+- Average tenure = mean of completed tenure months in the selected segment
 
-## Key data-quality decisions
-- Trim text whitespace and explicitly convert numeric columns.
-- No missing values, exact duplicate rows, or duplicate customer IDs were found.
-- No numeric IQR outliers were flagged.
-- `TotalCharges` equals `MonthlyCharges × TenureMonths` for every row within 0.01.
-- All records are retained; no unsupported imputation or deletion was performed.
+Revenue at risk is an exposure proxy based on monthly charges, not a forecast or lifetime revenue estimate.
 
-## Initial observations
-- Churn: 7/15 (46.7%).
-- All Month-to-Month customers in this small sample churned; no One Year or Two Year customers churned.
-- Mean support tickets: 4.29 for churned vs 1.00 for retained customers.
-- Mean tenure: 7.00 months for churned vs 29.12 months for retained customers.
+## Data and limitations
+Uses the supplied synthetic 15-customer sample. Results are descriptive and not statistically generalisable. Do not interpret associations as causes.
 
-## Limitations
-This is a 15-row synthetic teaching dataset. Findings are descriptive, not causal or statistically generalizable.
+## Publish with GitHub Pages
+1. Upload `index.html`, `dashboard_data.csv`, and this README to the public project repository.
+2. Open repository Settings → Pages.
+3. Under Build and deployment, choose Deploy from a branch.
+4. Choose `main` and `/ (root)`, then Save.
+5. Wait for deployment and open the published Pages URL.
