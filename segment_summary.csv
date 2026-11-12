@@ -1,0 +1,5 @@
+CustomerSegment,Customers,AverageRiskScore,HighRiskCustomers,MonthlyCharges,ObservedChurnCount,ObservedChurnRatePct
+Developing Customers,4,0.0,0,259.96,0,0.0
+Established & Stable,4,1.0,0,599.96,0,0.0
+Month-to-Month Watchlist,2,4.0,1,129.98,2,100.0
+New & High Support,5,7.0,5,279.95,5,100.0
